@@ -1,3 +1,11 @@
+//---------------------------------------------------------------------
+// Arquivo	: simulador.c
+// Conteúdo	: Implementação do TP3 de OC1 2024
+// Autor		: Carla Beatriz Ferreira, Gabriele Pinheiro Sá e
+//			  Manuela Monteiro Fernandes de Oliveira
+// Histórico	: 2024-08-08 - arquivo criado
+// ---------------------------------------------------------------------
+
 #include <stdio.h>
 #include <sys/types.h>
 
