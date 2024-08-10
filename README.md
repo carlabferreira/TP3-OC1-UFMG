@@ -15,4 +15,4 @@ A documentaçã foi feita em um documento compartilhado que está disponível no
 
 ### COMPILAR E EXECUTAR
 1) Para compilar basta digitar o comando ‘make’ na linha de comando, na pasta correta
-2) Para executar e testar,  digitar “./simulador TamanhoTotalCache TamanhoCadaLinha TamanhoCadaGrupo NomeArquivoComAcessosAMemoria”
+2) Para executar e testar,  digitar “bin/simulador TamanhoTotalCache TamanhoCadaLinha TamanhoCadaGrupo NomeArquivoComAcessosAMemoria”
