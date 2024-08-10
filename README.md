@@ -1,4 +1,5 @@
-# Trabalho Prático 3 de Organização de Computadores I na UFMG - 2024/1
+# Trabalho Prático 3
+## Organização de Computadores I - UFMG - 2024/1
 Implementado por:
 - Carla Beatriz Ferreira
 - Gabriele Pinheiro Sá
