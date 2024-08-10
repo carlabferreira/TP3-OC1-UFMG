@@ -13,6 +13,6 @@ O enunciado deste trabalho prático, que serviu de base para todo o desenvolvime
 
 A documentaçã foi feita em um documento compartilhado que está disponível no link https://docs.google.com/document/d/1xkAg1d6eEn34pM2F_36yvQu7vly5cG_oeEMFCFEpuo4/edit?usp=sharing
 
-### EXECUÇÃO
-1) Digitar o comando ‘make’ na linha de comando, na pasta correta
+### COMPILAR E EXECUTAR
+1) Para compilar basta digitar o comando ‘make’ na linha de comando, na pasta correta
 2) Para executar e testar,  digitar “./simulador TamanhoTotalCache TamanhoCadaLinha TamanhoCadaGrupo NomeArquivoComAcessosAMemoria”
