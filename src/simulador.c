@@ -5,7 +5,7 @@
 //			  Manuela Monteiro Fernandes de Oliveira
 // Histórico: 2024-08-08 - arquivo criado
 //            2024-08-10 - Implementada a leitura dos argumentos corretamente
-//            2024-08-11 - Inclusão de funções auxiliares 
+//            2024-08-11 - Inclusão de funções auxiliares e leitura do arquivo
 // ---------------------------------------------------------------------
 
 #include <stdio.h>
@@ -37,6 +37,16 @@ unsigned int EnderecoBase(unsigned int Endereco, int BitsOffset) {
 // Obtém o índice do conjunto da cache
 unsigned int IndiceConjunto(unsigned int Endereco, int BitsOffset, int BitsIndice) {
     return (Endereco >> BitsOffset) & ((1 << BitsIndice) - 1);
+}
+
+// Ler endereço de memória do arquivo de entrada
+int LerArquivo(FILE *file_input, unsigned int *Endereco) {
+    char linha[18];
+    if(fgets(linha, sizeof(linha), file_input)) {
+        sscanf(linha, "0x%x", Endereco); // Converte endereço de memória hexadecimal para inteiro
+        return 1; // Se ler um endereço com sucesso, retorna 1
+    }
+    return 0; // Se não tiver mais endereços pra ler, retorna 0
 }
 
 int main (int argc, char *argv[]){
