@@ -6,9 +6,11 @@
 // Histórico: 2024-08-08 - arquivo criado
 //            2024-08-10 - Implementada a leitura dos argumentos corretamente
 //            2024-08-11 - Inclusão de funções auxiliares e leitura do arquivo
+//            2024-08-12 - Inclusão da biblioteca stdlib.h para a função strtoul
 // ---------------------------------------------------------------------
 
 #include <stdio.h>
+#include <stdlib.h> // para usar strtoul
 #include <sys/types.h> // ou #include <stdint.h> para uint32_t
 #include <stdint.h>
 
