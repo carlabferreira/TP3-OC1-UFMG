@@ -7,6 +7,7 @@
 //            2024-08-10 - Implementada a leitura dos argumentos corretamente
 //            2024-08-11 - Inclusão de funções auxiliares e leitura do arquivo
 //            2024-08-12 - Inclusão da biblioteca stdlib.h para a função strtoul
+//            2024-08-14 - Esqueleto da função que simula a cache
 // ---------------------------------------------------------------------
 
 #include <stdio.h>
@@ -49,6 +50,14 @@ int LerArquivo(FILE *file_input, unsigned int *Endereco) {
         return 1; // Se ler um endereço com sucesso, retorna 1
     }
     return 0; // Se não tiver mais endereços pra ler, retorna 0
+}
+
+// Simula o acesso à cache
+void SimularCache(FILE *file_input, FILE *file_output, int TamanhoTotalCache, int TamanhoCadaLinha, int TamanhoCadaGrupo) {
+    int linhas = NumLinhas(TamanhoTotalCache, TamanhoCadaLinha);
+    int conjuntos = NumConjuntos(linhas, TamanhoCadaGrupo);
+    
+    //todo
 }
 
 int main (int argc, char *argv[]){
