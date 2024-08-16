@@ -1,0 +1,6 @@
+0x0CB886CA - miss (1)
+0x06BC89BA - miss (0)
+0x06F98ED5 - miss (1)
+0x06F98ED8 - hit (1), por conta da redução de bits, ele se torna igual a 0x06F98ED5 e há um hit
+0x06BC89BA - hit (0)
+0x06F98ED8 - hit (1)

@@ -1,0 +1,8 @@
+0x06BC89BA - miss (0)
+0x17AA08A2 - miss (0)
+0x379CBAD1 - miss (0), substitui 0x06BC89BA
+0x28F3123B - miss (0), substitui 0x17AA08A2
+0x06BC89BA - miss (0), substitui 0x379CBAD1
+0x0CB886CA - miss (1)
+0x06BC89BA - hit (0)
+0x06F98ED8 - miss (1)
