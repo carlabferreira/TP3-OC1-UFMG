@@ -22,6 +22,50 @@ typedef struct {
     uint32_t tag;        // Identificador do bloco (tag)
 } LinhaCache;
 
+//FUNÇÕES UTILIZADAS
+int LerArquivo(FILE *file_input, unsigned int *Endereco);
+int NumLinhas(int TamanhoTotalCache, int TamanhoCadaLinha);
+int NumConjuntos(int NumLinhas, int TamanhoCadaGrupo);
+int CalculaBitsOffset(int TamanhoCadaLinha);
+unsigned int EnderecoBase(unsigned int Endereco, int BitsOffset);
+void ImprimirCache(LinhaCache *cache, int linhas, FILE *file_output);
+void SimularCache(FILE *file_input, FILE *file_output, int TamanhoTotalCache, int TamanhoCadaLinha, int TamanhoCadaGrupo);
+
+int main (int argc, char *argv[]){
+    if(argc != 5){ // Verifica se a quantidade de argumentos está correta
+        printf("Erro, parametros incorretos!\n"
+                "Uso: TamanhoTotalCache TamanhoCadaLinha TamanhoCadaGrupo NomeArquivoComAcessosAMemoria\n");
+        return 1;
+    }
+
+    FILE *file_input = fopen(argv[4], "r");
+    FILE *file_output = fopen("output.txt", "w");
+
+    if (file_input == NULL) { // Verifica se o arquivo foi aberto com sucesso
+        perror("Erro ao abrir o arquivo");
+        return 1;
+    }
+
+    unsigned int TamanhoTotalCache;
+    unsigned int TamanhoCadaLinha;
+    unsigned int TamanhoCadaGrupo;
+    char *endptr;
+
+    // Converte os argumentos para unsigned int
+    TamanhoTotalCache = (unsigned int)strtoul(argv[1], &endptr, 10);
+    TamanhoCadaLinha = (unsigned int)strtoul(argv[2], &endptr, 10);
+    TamanhoCadaGrupo = (unsigned int)strtoul(argv[3], &endptr, 10);
+
+    // Chama a função que simula a cache
+    SimularCache(file_input, file_output, TamanhoTotalCache, TamanhoCadaLinha, TamanhoCadaGrupo);
+
+    // Fecha os arquivos após o uso
+    fclose(file_input);
+    fclose(file_output);
+
+    return 0;
+}
+
 // Função que lê um endereço de memória do arquivo de entrada
 int LerArquivo(FILE *file_input, unsigned int *Endereco) {
     char linha[18]; // Buffer para armazenar a linha lida do arquivo
@@ -124,39 +168,4 @@ void SimularCache(FILE *file_input, FILE *file_output, int TamanhoTotalCache, in
 
     free(cache);
     free(fifo_indices);
-}
-
-int main (int argc, char *argv[]){
-    if(argc != 5){ // Verifica se a quantidade de argumentos está correta
-        printf("Erro, parametros incorretos!\n"
-                "Uso: TamanhoTotalCache TamanhoCadaLinha TamanhoCadaGrupo NomeArquivoComAcessosAMemoria\n");
-        return 1;
-    }
-
-    FILE *file_input = fopen(argv[4], "r");
-    FILE *file_output = fopen("output.txt", "w");
-
-    if (file_input == NULL) { // Verifica se o arquivo foi aberto com sucesso
-        perror("Erro ao abrir o arquivo");
-        return 1;
-    }
-
-    unsigned int TamanhoTotalCache;
-    unsigned int TamanhoCadaLinha;
-    unsigned int TamanhoCadaGrupo;
-    char *endptr;
-
-    // Converte os argumentos para unsigned int
-    TamanhoTotalCache = (unsigned int)strtoul(argv[1], &endptr, 10);
-    TamanhoCadaLinha = (unsigned int)strtoul(argv[2], &endptr, 10);
-    TamanhoCadaGrupo = (unsigned int)strtoul(argv[3], &endptr, 10);
-
-    // Chama a função que simula a cache
-    SimularCache(file_input, file_output, TamanhoTotalCache, TamanhoCadaLinha, TamanhoCadaGrupo);
-
-    // Fecha os arquivos após o uso
-    fclose(file_input);
-    fclose(file_output);
-
-    return 0;
 }
